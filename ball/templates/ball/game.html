@@ -8,6 +8,8 @@
 
 <canvas id='gamecanvas' width='800' height="600"></canvas>
 
+<p>{{player1}}</p><br>
+<p>{{player2}}</p><br>
 <script>
 
  
@@ -16,8 +18,8 @@ var canvas;
 var canvasContext;
 var ballX = 400
 var ballY = 300
-var ballspeedX = 2;
-var ballspeedY = 2;
+var ballspeedX = -2;
+var ballspeedY = -2;
 var paddleY = 40
 var paddleZ = 40 
 var scoreone = 0
@@ -37,22 +39,20 @@ window.onload = function(){
 
 
 	window.addEventListener('keydown', function(event){
-
 	if (event.keyCode==87){
 		paddleY-=21
 
 	}else if (event.keyCode==83){
 		paddleY+=21
 	}
-
 });
 
-	window.addEventListener('keydown', function(e){
+	window.addEventListener('keydown', function(event){
 
-	if (e.keyCode==38){
+	if (event.keyCode==38){
 		paddleZ-=21
 
-	}else if (e.keyCode==40){
+	}else if (event.keyCode==40){
 		paddleZ+=21
 	}
 
@@ -79,6 +79,11 @@ function draw(){
 	canvasContext.fillText(scoretwo,650,30);
 }
 
+function exit(){
+	window.location.href = "{% url 'home' %}"
+}
+
+
 function move(){
 	ballX = ballX + ballspeedX;
 	ballY = ballY + ballspeedY;
@@ -86,9 +91,15 @@ function move(){
 		ballspeedX = -ballspeedX;
 	}else if (ballX>canvas.width && (ballY>0 && ballY<canvas.height)){
 		scoreone = scoreone+1
+		if(scoreone=={{score}}){
+			exit()
+		}
 		reset()
 	}else if (ballX<0 && (ballY>0 && ballY<canvas.height)){
 		scoretwo = scoretwo+1
+		if(scoretwo=={{score}}){
+			exit()
+		}
 		reset()
    	}else if (ballY>canvas.height && (ballX>0 && ballX<canvas.width)){
 		ballspeedY = -ballspeedY;
@@ -96,7 +107,6 @@ function move(){
 		ballspeedX = -ballspeedX;		
 	}else if (ballY<0 && (ballX>0 && ballX<canvas.width)){
 		ballspeedY = -ballspeedY;		
-	
 }
 
  

@@ -5,6 +5,14 @@
 </head>
 <body>
 	<h1>Main page</h1>
-	<a href="{% url 'game' %}">play</a>
+	<div align="center">
+		<form method="POST" action="{% url 'game' %}">
+			{% csrf_token %}
+			Enter player1 name <input name="player1"><br><br>
+			Enter player2 name <input name="player2"><br><br>
+			Enter max score <input name="score"><br><br>
+			<button type="submit">Play</button>
+		</form>
+	</div>
 </body>
 </html>
