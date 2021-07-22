@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Draciel Ball</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="apple-touch-icon" sizes="180x180" href="Icons/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="Icons/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="Icons/favicon/favicon-16x16.png">
+<link rel="manifest" href="Icons/favicon/site.webmanifest">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="CSS/Game.css">
+<body>
+
+<div class="MainHeading">
+  <h1 class="text1">Draciel Ball</h1>
+  <p class="text2">And with the new normal of quarantine we came with a rousing fun game.<br>This is a common paddle ball game with uncommon and immense intractive ui/ux tried to give you a more virtual real experience.<br>Built using javascript and python.</p>
+  <div class="first-link"><a href="#" class="my-link">Start</a></div>
+
+<div id="upper">
+  <div class="top"> 
+      <div class="stick1">
+  
+      </div>
+      <div class="ball">
+          
+      </div>
+      <div class="stick2">
+  
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+<div id="mainpage1">
+<div align="center" id="mainpage">  
+  <form method="POST" action="{% url 'game' %}">
+    <p id="head1">Welcome To Draciel Ball</p>
+    <div class="Player1"><b>Player 1</b><input name="player1" placeholder="Enter Your Name"><br><br></div> 
+    <div class="Player2"><b>Player 2</b><input name="player2" placeholder="Enter Your Name"><br><br></div> 
+    <div class="score"><b>Enter max score</b><input name="score" placeholder="Enter a Number"><br><br></div>
+    <div class="submit"><a href="game.html" class="playbutton" target="_blank">Play</a></div>
+  </form>
+</div>
+<hr class="line">
+</div>
+
+<div id="SocialMedia">
+
+  <div class="Heading">
+    <b>Our Developers</b>
+  </div>
+  <div class="left">
+    <b>Front-End Developer</b>
+  </div>
+
+  <div class="right">
+    <b>Back-End Developer</b>
+  </div>
+
+  <div>
+    <img src="Images/Ayush.jpg" alt="Front-End" width="15%" height="15%" class="Image1">
+    <div class="name1"><b>Ayush Sahu</b></div>
+  </div>
+
+  <div>
+    <img src="Images/Aziz.jpg" alt="Back-End" width="14%" height="13%" class="Image2">
+    <div class="name2"><b>Aziz Sharif</b></div>
+  </div>
+
+  <div class="link1">
+    <a href="https://www.linkedin.com/in/ayush-sahu-2781b91b4/" target="_blank" class="linkedin_handle">Linked <i class="fa fa-linkedin linkedin_handle"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.instagram.com/ayush_sahu_1903/" target="_blank" class="insta_handle"><i class="fa fa-instagram insta_handle"></i> Instagram</a>
+  </div>
+
+  <div class="link2">
+    <a href="https://www.linkedin.com/in/aziz-sharif-7265521a5/" target="_blank" class="linkedin_handle">Linked <i class="fa fa-linkedin linkedin_handle"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.instagram.com/aziz_sharif99/" target="_blank" class="insta_handle"><i class="fa fa-instagram insta_handle"></i> Instagram</a>
+  </div>
+</div>
+
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+  
+    <!-- jQuery code to show 
+      the working of this method -->
+    <script>
+        $(document).ready(function() {
+            $(document.getElementsByClassName("my-link")).click(function() {
+                $("html, body").animate({
+                    scrollTop: $(
+                      'html, body').get(0).scrollHeight
+                }, 2000);
+            });
+        });
+    </script>
+
+</body>
+</html>
